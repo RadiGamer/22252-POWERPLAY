@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Autonomos;
+package org.firstinspires.ftc.teamcode.Autonomos.tiempos;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
@@ -22,8 +22,8 @@ import org.openftc.easyopencv.OpenCvCameraRotation;
 import java.util.ArrayList;
 
 
-@Autonomous(name = "AutonomoEncoder_DERECHA")
-public class AutonomoEncoder_DERECHA extends LinearOpMode {
+@Autonomous(name = "AutonomoEncoder_IZQUIERDA_3CONOS")
+public class AutonomoEncoder_IZQUIERDA_3CONOS extends LinearOpMode {
 
     DcMotor front_right;
     DcMotor front_left;
@@ -190,47 +190,64 @@ public class AutonomoEncoder_DERECHA extends LinearOpMode {
 
         brazito(0.3, -45);
         detenerllantas(100);
-        enfrente(0.45, 51);
-        detenerllantas(400);
-        brazito(0.3, -887);
-        giroangulo(180 + 47);
+        enfrente(0.5, 50);
+        detenerllantas(100);
+        brazito(0.4, -887);
+        giroangulo(180 - 47);
         usar_elevador(0.4, 880);
-        detenerllantas(800);
-        enfrente(0.2, 10.5);
+        detenerllantas(100);
+        enfrente(0.2, 10);
         abrirgarra();
         //Primer cono
 
-        detenerllantas(900);
-        atras(0.2, 11.5);
-        usar_elevador(0.3, 380);
+        detenerllantas(100);
+        atras(0.35, 11);
+        usar_elevador(0.4, 380);
         detenerllantas(200);
         brazito(0.3, -2);
-        giroangulo(180 - 90);
-        enfrente(0.4, 24);
+        giroangulo(180 + 90);
+        enfrente(0.5, 25.5);
         cerrargarra();
         detenerelevadoor(450);
         usar_elevador(0.4, 900);
-        detenerllantas(750);
+        detenerllantas(150);
+        //AGARRAR 2DO CONO
 
-        atras(0.4, 24);
-        giroangulo(180 - 46);
+        atras(0.5, 25.5);
+        giroangulo(180 + 47);
         usar_elevador(0.4, 340);
-        brazito(0.4, -1400);
+        brazito(0.3, -1400);
         detenerllantas(400);
-        atras(0.2, 3);
+        atras(0.3, 4.3);
         detenerllantas(400);
         abrirgarra();
         //2do CONO
 
         detenerllantas(500);
         detenerelevadoor(300);
-        enfrente(0.2, 3);
-        usar_elevador(0.3, 30);
-        giroangulo(180 + 5);
-        brazito(0.3, -1);
-        atras(0.4, 21.5);
+        enfrente(0.3, 4.3);
+        usar_elevador(0.3, 350);
+        brazito(0.4, 0);
+        giroangulo(180+90);
+        enfrente(0.5, 26.5);
+        cerrargarra();
+        detenerelevadoor(450);
+        usar_elevador(0.4, 880);
+        detenerllantas(750);
+        atras(0.5, 26.5);
+        giroangulo(180+180);
+        usar_elevador(0.4, -40);
+        /*atras(0.2, 5);
+        abrirgarra();
+        detenerelevadoor(300);
+        detenerllantas(400);
+        enfrente(0.2, 5);
+        usar_elevador(0.4, 0);
+        giroangulo(180-5);
+        brazito(0.4, -1); */
 
-        if(tagOfInterest.id == 1)//PRIMER PARK
+
+        if(tagOfInterest.id == 3)//PRIMER PARK
         {
             Izquierda(0.4, 27);
 
@@ -242,7 +259,7 @@ public class AutonomoEncoder_DERECHA extends LinearOpMode {
             telemetry.addLine("2do park");
             telemetry.update();
         }
-        else if (tagOfInterest.id == 3)//3ER PARK
+        else if (tagOfInterest.id == 1)//3ER PARK
         {
             Derecha(0.4, 27);
             telemetry.addLine("3er park");
@@ -452,19 +469,19 @@ public class AutonomoEncoder_DERECHA extends LinearOpMode {
     }
 
     void enfrente(double velocidad, double CantidadEnPulgadas) {
-        encoderDrive(velocidad, CantidadEnPulgadas, CantidadEnPulgadas, CantidadEnPulgadas, CantidadEnPulgadas);
+        encoderDrive(velocidad, CantidadEnPulgadas, CantidadEnPulgadas, CantidadEnPulgadas, CantidadEnPulgadas); //BL, FR, BL, BR
     }
 
     void atras(double velocidad, double CantidadEnPulgadas) {
         encoderDrive(velocidad, -CantidadEnPulgadas, -CantidadEnPulgadas, -CantidadEnPulgadas, -CantidadEnPulgadas);
     }
 
-    void Derecha(double velocidad, double CantidadEnPulgadas) {
-        encoderDrive(velocidad, CantidadEnPulgadas, -CantidadEnPulgadas, CantidadEnPulgadas, CantidadEnPulgadas);
+    void Izquierda(double velocidad, double CantidadEnPulgadas) {
+        encoderDrive(velocidad, -CantidadEnPulgadas, CantidadEnPulgadas, CantidadEnPulgadas, -CantidadEnPulgadas);
     }
 
-    void Izquierda(double velocidad, double CantidadEnPulgadas) {
-        encoderDrive(velocidad, -CantidadEnPulgadas, CantidadEnPulgadas, -CantidadEnPulgadas, -CantidadEnPulgadas);
+    void Derecha(double velocidad, double CantidadEnPulgadas) {
+        encoderDrive(velocidad, CantidadEnPulgadas, -CantidadEnPulgadas, -CantidadEnPulgadas, CantidadEnPulgadas);
     }
 
     void rotarIzq(double velocidad, double CantidadEnPulgadas) {

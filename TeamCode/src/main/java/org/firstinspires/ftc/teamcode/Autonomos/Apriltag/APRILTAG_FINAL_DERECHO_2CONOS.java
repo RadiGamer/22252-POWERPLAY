@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.Autonomos.Apriltag;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -23,6 +24,7 @@ import org.openftc.easyopencv.OpenCvCameraRotation;
 import java.util.ArrayList;
 
 @Autonomous(name = "APRILTAG_LADO_DERECHO_2_CONOS")
+@Disabled
 public class APRILTAG_FINAL_DERECHO_2CONOS extends LinearOpMode
 {
     DcMotorEx front_left;

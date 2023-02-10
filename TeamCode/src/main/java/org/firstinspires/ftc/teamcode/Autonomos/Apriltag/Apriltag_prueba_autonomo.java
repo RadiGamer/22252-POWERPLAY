@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.Autonomos.Apriltag;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 
 @Autonomous(name = "Apriltag")
+@Disabled
 public class Apriltag_prueba_autonomo extends LinearOpMode {
 
     DcMotor front_right;

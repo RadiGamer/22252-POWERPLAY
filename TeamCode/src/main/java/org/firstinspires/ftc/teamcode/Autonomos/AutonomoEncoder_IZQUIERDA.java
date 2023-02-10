@@ -188,50 +188,51 @@ public class AutonomoEncoder_IZQUIERDA extends LinearOpMode {
             telemetry.update();
         }
 
-       brazito(0.2, -50);
+       brazito(0.3, -45);
         detenerllantas(100);
-        enfrente(0.3, 52);
+        enfrente(0.45, 51);
         detenerllantas(400);
         brazito(0.3, -887);
-        giroangulo(180 - 48);
-        usar_elevador(0.3, 850);
+        giroangulo(180 - 47);
+        usar_elevador(0.4, 880);
         detenerllantas(800);
-        enfrente(0.2, 11);
+        enfrente(0.2, 10.5);
         abrirgarra();
         //Primer cono
 
         detenerllantas(900);
-        brazito(0.3, -1100);
-        atras(0.2, 11);
-        usar_elevador(0.3, 400);
+        atras(0.2, 11.5);
+        usar_elevador(0.3, 380);
         detenerllantas(200);
         brazito(0.3, -2);
         giroangulo(180 + 90);
-        enfrente(0.4, 27);
+        enfrente(0.4, 24.5);
         cerrargarra();
-        detenerelevadoor(400);
-        usar_elevador(0.3, 1250);
+        detenerelevadoor(450);
+        usar_elevador(0.4, 900);
         detenerllantas(750);
 
-        atras(0.4, 27);
-        giroangulo(180 + 43);
-        usar_elevador(0.3, 450);
-        brazito(0.4, -1385);
+        atras(0.4, 24.5);
+        giroangulo(180 + 47);
+        usar_elevador(0.4, 360);
+        brazito(0.3, -1400);
         detenerllantas(400);
-        atras(0.2, 5);
+        atras(0.2, 4);
+        detenerllantas(400);
         abrirgarra();
         //2do CONO
 
-        detenerllantas(400);
-        enfrente(0.2, 5);
+        detenerllantas(500);
+        detenerelevadoor(300);
+        enfrente(0.2, 4);
         usar_elevador(0.3, 30);
         giroangulo(180 - 5);
         brazito(0.3, -1);
-        atras(0.4, 24);
+        atras(0.4, 21.5);
 
-        /*if(tagOfInterest.id == 1)//PRIMER PARK
+        if(tagOfInterest.id == 1)//PRIMER PARK
         {
-            Derecha(0.3, 15);
+            Izquierda(0.4, 27);
 
             telemetry.addLine("1er park");
             telemetry.update();
@@ -243,10 +244,10 @@ public class AutonomoEncoder_IZQUIERDA extends LinearOpMode {
         }
         else if (tagOfInterest.id == 3)//3ER PARK
         {
-            Izquierda(0.3, 15);
+            Derecha(0.4, 27);
             telemetry.addLine("3er park");
             telemetry.update();
-        } */
+        }
     }
 
 
